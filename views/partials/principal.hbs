@@ -1,0 +1,58 @@
+<div class="container">
+
+  <form action="/productos" method="POST">
+    <div class="form-group">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre del Producto</label>
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input
+          type="number"
+          name="price"
+          placeholder="Price"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="thumbnail" class="form-label">Direccion URL</label>
+        <input
+          type="text"
+          name="thumbnail"
+          placeholder="Thumbnail"
+          class="form-control"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">INGRESAR Producto</button>
+    </div>
+  </form>
+
+{{#if productos}} 
+    <h2 style="color:#5f9ea0; width:20px">Historial de productos cargados</h2>
+    <table class="table">
+        <tr>
+            <th>Nombre de Producto</th>
+            <th>Precio de Producto</th>
+            <th>Direccion Url Imagen del producto</th>
+        </tr>
+        {{#each productos }}
+            <tr>
+                <td>{{title}}  </td>
+                <td> {{price}} </td>
+                <td> {{thumbnail}} </td>
+            </tr> 
+       {{/each  }}
+       {{else}} 
+        <h3 style="color:crimson; background-color:black">No se registran productos ingresados.</h3>  
+        {{/if}}
+    </table>
+            <button><a href="/productos">Mostrar historial de productos</a></button>
+
+</div>

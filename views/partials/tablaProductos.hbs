@@ -1,0 +1,34 @@
+{{!-- {{> lovedChamps}}
+<br>
+{{>hatedChamps}}
+<br> --}}
+{{!-- 
+{{#if listExists}}
+<h2>LISTE OF MY MOST SUGGESTED LEAGUE CHAMPIONS</h2>
+<ul>
+    {{#each suggestedChamps}}
+    <li class={{this.lane}}>{{this.name}}</li>
+    {{/each}}
+</ul>
+{{/if}} --}}
+
+{{#if productos}} 
+    <h2 style="color:#5f9ea0; width:20px">Historial de productos cargados</h2>
+    <table class="table">
+        <tr>
+            <th>Nombre de Producto</th>
+            <th>Precio de Producto</th>
+            <th>Direccion Url Imagen del producto</th>
+        </tr>
+        {{#each productos }}
+            <tr>
+                <td>{{title}}  </td>
+                <td> {{price}} </td>
+                <td> {{thumbnail}} </td>
+            </tr> 
+       {{/each  }}
+       {{else}} 
+        <h3 style="color:crimson; background-color:black">No se registran productos ingresados.</h3>  
+        {{/if}}
+    </table>
+        <button><a href="/">Volver al principio</a></button>
